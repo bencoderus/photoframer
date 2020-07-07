@@ -1,22 +1,16 @@
 <?php
-if (isset($_FILES["image"])) {
-  require_once "convert.php";
-  function generateFileName($ext)
-  {
-    $filename = time() . rand(100, 999);
-    return $filename . $ext;
-  }
+/**
+ * Project: Photo Framer v1.0
+ * Author: Benjamin Iduwe
+ * Date: June 2020
+ */
 
-  $sourceImg = @imagecreatefromstring(@file_get_contents($_FILES["image"]["tmp_name"]));
-  if ($sourceImg === false) {
-    echo "images/avatar.png";
-    exit;
-  }
+ 
+spl_autoload_register();
+use app\Services\Generate;
 
-  $image = makeDP($_FILES["image"]["tmp_name"], (isset($_POST["design"]) ? $_POST["design"] : 0));
-  $ext = ".jpg";
-  $loc = "uploads/" . generateFileName($ext);
-
-  file_put_contents($loc, $image);
-  echo $loc;
-}
+$file = $_FILES["image"]["tmp_name"];
+$design= $_POST["design"];
+$image = new Generate();
+$res = $image->upload($file, $design);
+echo($res);

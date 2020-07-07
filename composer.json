@@ -1,0 +1,12 @@
+{
+  "name": "Photoframer",
+  "description": "This app is used to add pictures to a frame",
+  "type": "project",
+  "authors": [
+    {
+      "name": "bencoderus",
+      "email": "bencoderus@gmail.com"
+    }
+  ],
+  "require": {}
+}
