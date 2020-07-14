@@ -9,12 +9,12 @@ namespace app\Services;
 
 use app\Traits\Response;
 
-class Generate
+class ImageBuilder
 {
     use Response;
 
-    const HEIGHT = 1000;
-    const WIDTH = 1000;
+    const HEIGHT = 400;
+    const WIDTH = 400;
     const PATH = 'uploads/';
     const EXTENSION = '.jpg';
 

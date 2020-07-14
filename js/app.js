@@ -1,5 +1,5 @@
-const mainwidth = 1000
-const mainheight = 1000
+const mainwidth = 400
+const mainheight = 400
 
 let dataURItoBlob = dataURI => {
   // convert base64/URLEncoded data component to raw binary data held in a string

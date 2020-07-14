@@ -7,10 +7,10 @@
 
  
 spl_autoload_register();
-use app\Services\Generate;
+use app\Services\ImageBuilder;
 
 $file = $_FILES["image"]["tmp_name"];
 $design= $_POST["design"];
-$image = new Generate();
+$image = new ImageBuilder();
 $res = $image->upload($file, $design);
 echo($res);
